@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS cascade</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        i {
+            color: green
+        }
+        i {
+            color: red;
+        }
+        b {
+            color: pink;
+        }
+        p b {
+            color: blue !important
+        }
+        pb {
+            color: violet;
+        }
+        p#intro {
+            font-size: 100%;
+        }
+        p {
+            font-size: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Potatoes</h1>
+    <p id="intro">
+        Lorem ipsum, dolor sit, <i>amet consectetur</i>  adipisicing elit. 
+        Rerum cumque ipsam <b>quasi nihil consequuntur</b> tenetur odit fugit, 
+        provident, aut a ea reprehenderit numquam, 
+        dolorem iure molestias sapiente sint placeat.
+    </p>
+</body>
+</html>
