@@ -1,4 +1,4 @@
-
+@import url(../css/960_12_col.css);
 body {
     color: #ffffff;
     background: #413f3b url("images/bg.jpg");
@@ -20,6 +20,42 @@ p {
         color: #b5c1ad;
 }
 
-button {
+.button {
         font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #413f3b;
+        color: #d6d6d6;
+        padding: 10px 20px;
+        text-decoration: none; /* eemaldab allajoonimise */
+        border-radius: 5px; /* ümarad nurgad*/
+
+}
+
+.container {
+    display: flex;
+    align-items: center; /*Ülemine joondus*/
+    justify-content: center; /* Vasakule joondus */  /*Center - Joondab elemendid horisontaalselt keskele */
+    gap: 30px;
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.container img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+}
+
+text {
+    font-size: 80%;
+    color: #d6d6d6;
+    display: flex;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
 }
