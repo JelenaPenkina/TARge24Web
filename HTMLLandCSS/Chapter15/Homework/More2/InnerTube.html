@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Innertube</title>
 <link rel="stylesheet" href="../style.css">
+<script>
+    function goHome() {
+        window.location.href = "../../example.html";
+        return false; 
+    }
+    </script>
 </head>
 <body>
+    <div class="header">
+        <div class="container_12">
+            <div class="grid_5">
+                <img src="../../images/logo.png" alt="Pedal Faster - The modern bicycle magazine" width="216" height="37" class="logo">
+                <img src="../../images/header-triangle.png" alt="" width="116" height="100">
+            </div>
+            <div class="nav grid_7">
+                <a href="../../example.html">Home</a> / 
+                <a href="../Päis/News.html">News</a> / 
+                <a href="../Päis/Archives.html">Archives</a> / 
+                <a href="../Päis/About.html">About</a> / 
+                <a href="../Päis/Contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <img src="Fahrradschlaeuche.jpg" alt="Innertube">
         <div class="text">
@@ -15,7 +36,14 @@
             The inflated inner tube provides structural support and suspension, while the outer 
             tire offers grip and protects the more fragile tube.
         </div>        
+    </div>
+    <div class="footer clearfix">
+        <div class="container_12">
+            <p class="grid_12"><a href="../../Homework/Jalus/Legalinfarmation.html">Legal Information</a> 
+            | <a href="../../Homework/Jalus/PrivacyPolice.html">Privacy Police </a> 
+            | <a href="../../Homework/Jalus/Copyright.html">Copyright &copy; Pedal Faster 2025</a></p>
+        </div>
     </div> 
-    <a href="../../example.html" class="button"> TAGASI </a>
+    <a href="../../example.html" class="button" onclick="return Home();"> TAGASI </a>
 </body>
 </html>
