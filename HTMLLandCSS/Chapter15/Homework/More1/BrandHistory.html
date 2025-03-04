@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand history</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center; /* Ülespoole joondamine */
+            justify-content: center; /* Horisontaalne tsentreerimine */
+            position: relative; /* Relative position for the container */
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .container img {
+            width: 60%; /* Pildi suurus */
+            height: auto;
+            object-fit: cover; /* Pilt jääb oma suhetesse */
+        }
+
+        h1 {
+            position: absolute; /* Absoluutne positsioon */
+            top: 30%; /* Võib muuta, et täpselt pildi üle paigutada */
+            left: 60%;
+            transform: translateX(-50%); /* Tsentreerib horisontaalselt */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* varjutab teksti, et oleks nähtavam */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -23,7 +48,8 @@
         </div>
     </div>
     <div class="container">
-        <img src="picture-of-shimano-bicycle.jpg" alt="BrandHistory">  
+        <img src="picture-of-shimano-bicycle.jpg" alt="BrandHistory"> 
+        <h1> Brand history </h1> 
         <div class="text">
             Bianchi Bicycles this is the oldest bicycle manufacturer that is still in business. 
             Bianchi Bicycles was established by Edoardo Bianchi in Milan, Italy in 1885.

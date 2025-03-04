@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On the Road</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center; /* Ülespoole joondamine */
+            justify-content: center; /* Horisontaalne tsentreerimine */
+            position: relative; /* Relative position for the container */
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .container img {
+            width: 60%; /* Pildi suurus */
+            height: auto;
+            object-fit: cover; /* Pilt jääb oma suhetesse */
+        }
+
+        h1 {
+            position: absolute; /* Absoluutne positsioon */
+            top: 10%; /* Võib muuta, et täpselt pildi üle paigutada */
+            left: 50%;
+            transform: translateX(-50%); /* Tsentreerib horisontaalselt */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* varjutab teksti, et oleks nähtavam */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -24,6 +49,7 @@
     </div>
     <div class="container">
         <img src="Bicicletta_Bianchi_1950-1952_-_Museo_scienza_e_tecnologia_Milano_(cropped).jpg" alt="On the Road">
+        <h1>On the Road</h1>
         <div class="text">
             The term road bicycle is used to describe bicycles built for traveling at speed on paved roads. 
             Some sources use the term to mean racing bicycle. Other sources specifically exclude racing bicycles 

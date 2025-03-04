@@ -5,12 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Innertube</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+    .container {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        position: relative; 
+        padding: 20px;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .container img {
+        width: 60%; 
+        height: auto;
+        object-fit: cover; 
+    }
+
+    h1 {
+        position: absolute; 
+        top: 32%; 
+        left: 60%;
+        transform: translateX(-50%); 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    }
+</style>
 <script>
     function goHome() {
         window.location.href = "../../example.html";
         return false; 
     }
-    </script>
+</script>
 </head>
 <body>
     <div class="header">
@@ -30,6 +55,7 @@
     </div>
     <div class="container">
         <img src="Fahrradschlaeuche.jpg" alt="Innertube">
+        <h1> InnerTube </h1>
         <div class="text">
             An inner tube is an inflatable torus that forms the interior of some pneumatic tires.
             The tube is inflated through a valve stem and fits inside the tire casing. 
