@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="car"></p>
+    <br>
+    <h3>Shift</h3>
+    <p id="carsShift1"></p>
+    <p id="carsShift2"></p>
+    <br>
+    <h3>Unshift</h3>
+    <p id="carsUnshift1"></p>
+    <p id="carsUnshift2"></p>
+    <br>
+    <h3>Delete</h3>
+    <p id="carsDelete1"></p>
+    <p id="carsDelete2"></p>
+    <br>
+    <h3>Pop</h3>
+    <p id="carsPop1"></p>
+    <p id="carsPop2"></p>
+    <br>
+    <h3>Splice</h3>
+    <p id="carsSplice1"></p>
+    <p id="carsSplice2"></p>
+
+</body>
+<script>
+    const cars = ["Volvo", "BMW", "Audi", "Ford"];
+    let carsSize = cars.length;
+    document.getElementById("car").innerHTML = carsSize;
+
+    // kasutada shift, unshift, delete, pop, splice
+    // võtab ära esimese elemendi
+    document.getElementById("carsShift1").innerHTML = cars;
+    cars.shift();
+    document.getElementById("carsShift2").innerHTML = cars;
+
+
+    //carsSize = cars.unshift("FlyingCar");
+    // lisab uue elemendi nimekirja algusesse
+    document.getElementById("carsUnshift1").innerHTML = cars;
+    cars.unshift("Flying car")
+    document.getElementById("carsUnshift2").innerHTML = cars;
+
+
+    // carsSize = cars.delete;
+    // delete tekitab tühjad kohad massiivi ja siis on vastuseks undefined
+    document.getElementById("carsDelete1").innerHTML = "First car is" + cars[0];
+    delete cars[0]
+    document.getElementById("carsDelete2").innerHTML = "First car is" + cars[0];
+
+    const cars1 = ["Volvo", "BMW", "Audi", "Ford"];
+    document.getElementById("carsPop1").innerHTML = cars1;
+    cars1.pop(); // võtab viimase elemendi välja 
+    document.getElementById("carsPop2").innerHTML = cars1;
+
+   
+    const cars2 = ["Volvo", "BMW", "Audi", "Ford"]; 
+    // lisab kaks elementi juurde
+    document.getElementById("carsSplice1").innerHTML = cars2;
+    // esimenenumber on lisatava elementide stardikoht
+    cars2.splice(2,0,"Kia", "Škoda");
+    document.getElementById("carsSplice2").innerHTML = cars2;
+
+</script>
+</html>
