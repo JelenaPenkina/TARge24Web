@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>What your name?</h3>
+    <p id="person"></p>
+</body>
+<script>
+     const person = {
+        name: "Jim", 
+        nickName: "Jimbo", 
+        height: '188', 
+        hairColor: "Black"
+    };
+
+    person.fullName = function() {
+            return (person.name + " " + person.nickName).toUpperCase();
+        }
+
+    //  My name is JiM JIMBO
+
+    document.getElementById("person").innerHTML = "My name is " + person.fullName();
+</script>
+</html>

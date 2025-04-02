@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="person1"></p>
+    <p id="person2"></p>
+
+    <p id="JimCycles"></p>
+</body>
+<script>
+      const person = {
+        name: "Jim", 
+        nickName: "Jimbo", 
+        height: '188', 
+        hairColor: "Black"
+    };
+
+    // me soovime niimoodi, et pikkust undefined
+    document.getElementById("person1").innerHTML = person.name + " is " + person1.height + " in height.";
+    // teine variant kui ei muuda personit ning õpetaja versioon 
+    delete person["height"]
+    document.getElementById("person2").innerHTML = person.name + " is " + person1.height + " in height.";
+
+    const car = {
+        human: "Jim",
+        height: 188,
+        bicycles: {
+            cycle1: "FUJI", 
+            cycle2: "SCHWINN", 
+            cycle3: "Trek"
+        }
+    }
+    
+    document.getElementById("JimCycles").innerHTML = car.human + " likes the most cycle " + car.bicycles.cycle2;
+</script>
+</html>
