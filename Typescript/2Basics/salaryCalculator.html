@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palga kalkulaator</title>
+</head>
+<body>
+    <!--<p id="neto"></p>
+    <p id="result"></p> --> 
+
+    <h2>SALARY</h2>
+    <button onclick="salary()">Calculate salary</button>
+    <p>Neto Salary: <span id="neto"></span>€</p>
+
+    <!-- Õpetaja vastused -->
+    <p id="grossSalary"></p>
+    <p id="TaxFree"></p>
+    <p id="taxAbleIncome"></p>
+    <p id="IncomeTax"></p>
+    <p id="NetSalary"></p>
+</body>
+<script>
+//Palga kalkulaator
+//1. Sina sisestad brutotasu ja valem arvutab välja netotasu.
+//2. Kokku peab olema kolm erinevat meetodit. 
+// Enne kui meetod algab, siis peab olema kontroll, 
+// et millist meetodi hakatakse kasutama ja sisestatud palgasumma 
+// peab minema edasi järgmisse meetodi.
+//3. Netotasu peab arvutama selliselt välja, et sina ei peaks 
+// tuludeklaratsiooni ajal juurde maksma ega saa pärast riigilt raha 
+// juurde kuna oled rohkem maksnud.
+//4. Kood peab olema inglisekeelne.
+//Palgakalkulaator:
+//https://www.kalkulaator.ee/et/palgakalkulaator
+//Palga arvutamise valem:
+//https://www.emta.ee/et/maksuvaba-tulu
+
+// let x = 14400
+
+// const maksuvabaMiinimum = 7848;
+// const minimum = 144000;
+// const taxRate = 22;
+// const pension = 2;
+// const insurance = 1.6;
+
+// bruto = 1200;
+
+// neto = bruto - taxRate - pension - insurance;
+// document.getElementById("neto").innerHTML = neto;
+//function button() {
+   // document.getElementById("clickButton").onclick = salary; 
+//}
+
+    function salary() {
+        const salary = prompt("Write your salary?");
+
+        if (isNAN(bruto) || bruto <= 0) {
+            alert("Invalid input. Please enter your bruto salary!");
+            return;
+        }
+
+        let taxFreeIncome = prompt("Do you have tax-free income? (yes/np)").toLowerCase;
+        
+        let = bruto;
+
+        if (taxFreeIncome === "yes") {
+            bruto = calculateWithTaxFree(bruto);
+        } else if (taxFreeIncome === "no") {
+            bruto = calculateWithoutTaxFree(bruto);
+        } else {
+            alert("Invalid input. Please enter 'yes' or 'no'");
+            return;
+        }
+
+        document.getElementById("neto").innerHTML = bruto;
+    }
+
+    function calculateWithoutTaxFree(bruto) {
+        let pension = bruto * 0.02;
+        let unemploymentInsurance = bruto * 0.016;
+        let incomeTax = (bruto - pension - unemploymentInsurance) * 0.2;
+
+        return bruto - pension - unemploymentInsurance - incomeTax;
+    } 
+
+
+    function calculateWithTaxFree(bruto) {
+        let maxTaxFree = 654;
+        let pension = bruto * 0.02;
+        let unemploymentInsurance = bruto * 0.016;
+
+        let taxableIncome = bruto - pension - unemploymentInsurance;
+        let taxFreeAmount = Math.max(0, maxTaxFree - ((taxableIncome-1200)/900)* maxTaxFree);
+
+        let incomeTax = (taxableIncome - taxFreeAmount) * 0.2;
+        return taxableIncome - incomeTax;
+    }
+
+    // õpetaja  näide
+
+    let grossSalary = 1500;
+    document.getElementById("grossSalary").innerHTML = "Brutopalk: " + grossSalary.toFixed(2);
+
+    let TaxFree;
+    if (grossSalary <= 1200) {
+        TaxFree = 654;
+    } else if(grossSalary <= 2099) {
+        TaxFree = 654 * 0.72667 * (grossSalary - 1200);
+    } else {
+        TaxFree = 0;
+    };
+
+    document.getElementById("TaxFree").innerHTML = "Sissetulek: " +  TaxFree.toFixed(2) + " eurot.";
+
+    let taxAbleIncome = grossSalary - TaxFree
+    document.getElementById("taxAbleIncome").innerHTML = "Sissetulek: " +  taxAbleIncome.toFixed(2) + " eurot.";
+
+    let IncomeTax = taxAbleIncome * 0.22;
+    document.getElementById("IncomeTax").innerHTML = "Sissetulek: " +  IncomeTax.toFixed(2) + " eurot.";
+
+    let NetSalary = grossSalary - IncomeTax;
+    document.getElementById("NetSalary").innerHTML = "Sissetulek: " +  NetSalary.toFixed(2) + " eurot.";
+</script>
+</html>
