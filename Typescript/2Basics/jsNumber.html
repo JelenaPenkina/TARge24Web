@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p id="numbers"></p> 
+   <p id="largeNumbers"></p> 
+   <p id="wrongCalculation"></p>
+   <p id="correctCalculation"></p>
+   <p id="divide"></p>
+   <p id="add"></p>
+   <p id="add2"></p>
+   <p id="wrongDivide"></p>
+   <p id="sNaNDivide"></p>
+   <p id="infinityNumber"></p>
+   <!-- shift + alt + nool alla -> kopeerib viimase koodi ning lisab selle alla-->
+</body>
+<script>
+    let q = 123e5;
+    let w = 123e-5;
+    document.getElementById("numbers").innerHTML = q + "<br>" + w;
+     // output : 12300000
+     //          0.00123
+
+    let e = 999999999999999;
+    let r = 9999999999999999;
+    document.getElementById("largeNumbers").innerHTML = e + "<br>" + r; 
+    // output : 999999999999999
+    //          10000000000000000
+
+    let t = 0.2 + 0.1;
+    document.getElementById("wrongCalculation").innerHTML = "0.2 + 0.1 = " + t; // output: 0.2 + 0.1 = 0.30000000000000004
+
+    //Kuidas saab probleemi lahendada??
+
+    let y = (0.2 * 10 + 0.1 * 10) / 10;
+    document.getElementById("correctCalculation").innerHTML = "0.2 + 0.1 = " + y;
+
+    let a = "100";
+    let s = "10";
+    let d = a  / s;
+    document.getElementById("divide").innerHTML = d; // output 10
+
+    let f = a + s;
+    document.getElementById("add").innerHTML = f; // output 10010
+
+    let g = 100;
+    let h = 10; 
+    let j = g + h;
+    document.getElementById("add2").innerHTML = j; // output 110
+
+    let k = 100;
+    let l = "Computer";
+    let z = k / l;
+    document.getElementById("wrongDivide").innerHTML = z; // output: NaN - Not a Number on selle tähendus 
+    document.getElementById("sNaNDivide").innerHTML = isNaN(z); // output: true
+
+    let infinityNumber = 2;
+    let txt = "";
+    while (infinityNumber != Infinity) {
+        infinityNumber = infinityNumber * infinityNumber;
+        txt = txt + infinityNumber + "<br>";
+    }
+    document.getElementById("infinityNumber").innerHTML = txt;
+    // output: 
+
+
+</script>
+</html>
