@@ -9,6 +9,10 @@
     <p id="tereTulemast">Tere õhtust!</p>
 
     <p id="tereTulemast2"></p>
+
+    <p id="teretamine"></p>
+
+    <p id="randomLink"></p>
 </body>
 <script>
     if (new Date().getHours() < 18) {
@@ -23,5 +27,27 @@
     } else {
         document.getElementById("tereTulemast2").innerHTML = "Head ööd!"
     }
+
+    // ÕPETAJA VERSIOON
+    const time = new Date().getHours();
+    let text;
+    if (time < 9) {
+        text = "Tere hommikust"; 
+    }  else if (time < 20) {
+        text = "Tere päevast"; 
+    } else {
+        text = "Head ööd"; 
+    }
+    document.getElementById("teretamine").innerHTML = text;
+
+    // RANDOM
+    if(Math.random() < 0.5) {
+        text = "<a href='https://www.tthk.ee/'> TTHK </a>"
+    } else {
+        text = "<a href='https://www.youtube.com/'> YouTube </a>"
+    }
+    document.getElementById("randomLink").innerHTML = text; 
+    // output: vahetab alati omavahel linke iga uuendamisel, kas TTHK link ja Youtube link korda mööda
+
 </script>
 </html>

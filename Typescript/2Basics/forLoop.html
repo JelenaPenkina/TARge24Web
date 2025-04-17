@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="buildingTypes"></p>
+    <p id="result"></p>
+    <p id="someIteration"></p>
+</body>
+<script>
+    const buildingTypes = ["Maja", "Korter", "Elamurida", "Paarismaja", "Ühikas"];
+
+    // Tuleb kasutada for Loopi ja vähemalt viis elamutüüpi
+    for (let i = 0; i < 5; i++) {
+        document.getElementById("buildingTypes").innerHTML = buildingTypes;
+        // output minul: Maja,Korter,Elamurida,Paarismaja,Ühikas
+    }
+
+    // ÕPETAJA VERSIOON 
+    let result = ""; 
+    for (let i = 0; i < buildingTypes.length; i++) {
+        result += buildingTypes[i] + "<br>";
+    }
+    document.getElementById("result").innerHTML = result;
+    // output õpetajal: 
+    // Maja
+    // Korter
+    // Elamurida
+    // Paarismaja
+    // Ühikas
+
+    // forEach
+    const numbers = [34, 6, 1, 89, 98];
+    let result1 = "";
+
+    numbers.forEach(someIteration);
+    document.getElementById("someIteration").innerHTML = result1;
+
+    function someIteration(value, index, array) {
+        result1 += value + "<br>";
+    }
+</script>
+</html>

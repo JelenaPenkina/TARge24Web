@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="getMonth"></p>
+
+
+    <p id="getDay"></p>
+</body>
+<script>
+    let month;
+    switch (new Date().getMonth()) {
+        case 0: 
+            month = "Jaanuar"
+            break;
+        case 1: 
+            month = "Veebruar"
+            break;
+        case 2: 
+            month = "Märts"
+            break;
+        case 3: 
+            month = "Aprill"
+            break;
+        case 4: 
+            month = "Mai"
+            break;
+        case 5: 
+            month = "Juuni"
+            break;
+    }
+
+    document.getElementById("getMonth").innerHTML = "Täna on " + month; 
+
+    // Kui on neljapäev ja reede, siis ütleb: Kohe on nädalavahetus
+    // Kui on laupäev ja pühapäev, siis ütleb: On nädalavahetus
+
+    let day; 
+    switch (new Date().getDay()) {
+        case 3: // alustan 3, sest siis ei pea tegema E-K, aga E - 0, T - 1, K - 2 
+        // ehk arvuti ise loeb juba seda õigeks, kui panna algusega 0, siis tuleb undefiend
+            day = "Kohe on nädalavahetus";
+            break;
+        case 4:
+            day = "Kohe on nädalavahetus";
+            break;
+        case 5:
+            day = "On nädalavahetus";
+            break;
+        case 6:
+            day = "On nädalavahetus";
+            break;
+        
+        default: // alati SWITCH-CASE lahenduses kasutatakse lõppus default
+            day = "Ootan nädalavahetust";
+    }
+
+    document.getElementById("getDay").innerHTML = day;
+</script>
+</html>
