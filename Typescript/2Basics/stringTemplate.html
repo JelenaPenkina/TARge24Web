@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text"></p>
+    
+    <p id="someLoop"></p>
+</body>
+<script>
+    let firstName = "Heli"; 
+    let lastName = "Kopter"; 
+
+    let text = `Tere tulemast ${firstName}, ${lastName}!`;
+    document.getElementById("text").innerHTML = text;
+
+    let title = "String Template: ";
+    let someLoop = ["C++", "JavaScript", "TypeScript"];
+
+    // Tulemus peaks olema selline:
+    // C++
+    // javaScript
+    // Typescript
+
+    for (const x of someLoop) {
+        title += `<li>${x}</li>`;
+    }
+    document.getElementById("someLoop").innerHTML = title;
+    
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+    //https://how.dev/answers/what-is-the-match-method-javascript
+    //https://www.w3schools.com/jsref/jsref_obj_array.asp
+</script>
+</html>

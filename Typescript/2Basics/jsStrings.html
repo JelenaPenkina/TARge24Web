@@ -17,6 +17,7 @@
     <p> Leia kaks "on" sõna: <p id="someArray2"></p></p>
 
     <p id="dogText"></p>
+    <p id="includeText"></p>
     
 </body>
 <script>
@@ -42,5 +43,8 @@
     const iterator = dogText.matchAll("Koer");
 
     document.getElementById("dogText").innerHTML = Array.from(iterator);
+
+    document.getElementById("includeText").innerHTML = dogText.includes("onn"); // kui leiab sõna ülesse, siis tagastab true, kui ei ole siis false 
+    
 </script>
 </html>
