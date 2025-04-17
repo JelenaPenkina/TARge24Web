@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>indexOf() ja lastIndexOf() tagastavad -1, kui teksti ei ole leitud</p>
+    <p id="someText"></p>
+
+    <p id="searchText"></p>
+
+    <p>Teha match-ga üks sõna otsing: <p id="matchWord"></p> </p> 
+    <p>Õpetaja versioon: <p id="someArray"></p></p>
+
+    <p> Leia kaks "on" sõna: <p id="someArray2"></p></p>
+
+    <p id="dogText"></p>
+    
+</body>
+<script>
+    let someText = "Mul on sinine auto ja on esiratta veoga";
+    let locateWord = someText.lastIndexOf("on");
+    document.getElementById("someText").innerHTML = locateWord;
+
+    let searchText = someText.search(/ja/);
+    document.getElementById("searchText").innerHTML = searchText;
+
+    let matchWord = someText.match(/sinine/);
+    document.getElementById("matchWord").innerHTML = matchWord; 
+
+    // ÕPETAJA VERSIOON 
+    const someArray = someText.match("on");
+    document.getElementById("someArray").innerHTML = someArray.length + " " + someArray; 
+
+    // tahan sellist tulemust, kus tagastaks, et sõna "on" on kaks tükki lauses
+    const someArray2 = someText.match(/on/g); //kui soovin, et ei oleks case sensitiv, siis g asemel kasutan gi
+    document.getElementById("someArray2").innerHTML = "'On' sõnu on: " + someArray2.length + ", " + someArray2;
+    
+    let dogText = "Koerad on toredad. Neile meeldib palju õues liikuda. Koerad on populaarsed";
+    const iterator = dogText.matchAll("Koer");
+
+    document.getElementById("dogText").innerHTML = Array.from(iterator);
+</script>
+</html>
