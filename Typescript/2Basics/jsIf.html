@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="tereTulemast">Tere õhtust!</p>
+
+    <p id="tereTulemast2"></p>
+</body>
+<script>
+    if (new Date().getHours() < 18) {
+        document.getElementById("tereTulemast").innerHTML = "Tere tulemast!" // output: Tere tulemast!
+    }
+
+    // Tehke sama asi nagu eelmine kord, aga p alla ei kirjuta midagi. Tuleb kasutada else ja if 
+    if (new Date().getHours() < 18) {
+        document.getElementById("tereTulemast2").innerHTML = "Tere päevast!"
+    } else if (new Date().getHours() < 23) {
+        document.getElementById("tereTulemast2").innerHTML = "Tere õhtust!"
+    } else {
+        document.getElementById("tereTulemast2").innerHTML = "Head ööd!"
+    }
+</script>
+</html>
