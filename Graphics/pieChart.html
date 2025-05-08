@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Teha koogi Chart</p>
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <br>
+    <p> Õpetaja versioon</p>
+    <div id="linePlot" style="width: 100%; max-width: 700px;"></div>
+</body>
+<script>
+    const xValues = ["Italy", "Germany", "Estonia", "Sweden", "Finland"];
+    const yValues = [55, 30, 40, 16, 16];
+    const barColors = ["red", "green","blue","orange","brown"];
+
+    const myChart = new Chart("myChart", {
+        type: "pie", 
+        // erinevad tüübid: "doughnut", "horizontalBar", "bar", "line", "scatter"
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "World cranberry production"
+            }
+        }
+    }); 
+
+    // ÕPETAJA VERSIOON 
+    const xArray = ["Italy", "Germany", "Estonia", "Sweden", "Finland"];
+    const yArray = [55, 30, 40, 16, 16];
+
+    const layout = {title: "World cranberry production"};
+
+    const data = [{labels:xArray, values:yArray, type:"pie"}];
+
+    Plotly.newPlot("linePlot", data, layout);
+</script>
+</html>

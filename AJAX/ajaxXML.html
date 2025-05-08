@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Kasutada for loopi</p>
+    <p>Faili laiend peab olema .xml</p>
+    <p>Failis peab olema 20 rida nimesid</p>
+    <p>Iga nimi peab olema järgmisel real</p>
+
+    
+    <h2><b>The XMLHttpRequest Object</b></h2>
+    <div id="names">
+        <button type="button" onclick="loadText()">Get my Name request</button>
+
+        <h3>ÕPETAJA VERSIOON</h3>
+        <button type="button" onclick="onClickFunc()">Click Me!</button>
+    </div>
+</body>
+<script>
+   function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+       xhttp.onload = function() {
+      loadText(this);
+   }
+       xhttp.open("GET", "Nimed.xml");
+        xhttp.send();
+   }
+
+
+    function loadText(xml) {
+       const xmlDoc = xml.responseXML;
+        const x = xmlDoc.getlElementsByTagName("NAME");
+     // let table ? 
+       for (let i = 0; i < x.length; i++) {
+           x[i].getlElementsByTagName("Nimed")[0];
+      }
+      document.getElementById("names").innerHTML = x; 
+    }
+
+    // ÕPETAJA VERSIOON
+    function onClickFunc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                const xmlDocument = this.responseXML;
+                const x = xmlDocument.getElementsByTagName("NAME");
+                let txt = "";
+                for (let i = 0; i < x.length; i++) {
+                    txt + x[i].textContent + "<br>";
+                }
+                document.getElementById("ajaxXMLList").innerHTML = txt;
+            }    
+        }  
+
+        xhttp.open("GET", "Nimed.xml");
+        xhttp.send();
+    }
+    // vaadata üle uuesti kood õpetaja oma 
+
+ 
+</script>
+</html>
